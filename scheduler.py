@@ -45,13 +45,13 @@ class CarbonAwareScheduler:
             
             # If we have a safe buffer (e.g., > 2 hours), defer the job
             if time_remaining > timedelta(hours=2):
-                print(f"⚠️  Grid is dirty (> {self.carbon_threshold} gCO2/kWh). Deferring job {job_id}.")
+                print(f"[DEFERRED] Grid is dirty (> {self.carbon_threshold} gCO2/kWh). Deferring job {job_id}.")
                 print(f"   Time remaining before SLA breach: {time_remaining}")
                 print(f"   Action: Suggest rescheduling for +1 hour.")
                 return False # Job was deferred
 
         # If grid is green OR deadline is approaching, run it now
-        print(f"✅ Executing job {job_id}. Intensity is acceptable or deadline is near.")
+        print(f"[EXECUTING] Job {job_id}. Intensity is acceptable or deadline is near.")
         job_func()
         return True
 

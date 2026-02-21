@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "greenops-tool"
+version = "0.1.0"
+description = "A reference implementation of the GreenOps Framework for carbon-aware scheduling and estimation."
+readme = "README.md"
+authors = [{ name = "Ramkumar Gudivada" }]
+license = { text = "MIT" }
+keywords = ["greenops", "sustainability", "carbon", "scheduler", "snowflake"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "requests",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ramkdataeng-lab/greenops-carbon-scheduler"
